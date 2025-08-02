@@ -1,0 +1,165 @@
+name: ✨ Feature Request
+description: Suggest a new feature or enhancement
+title: "[Feature]: "
+labels: ["enhancement", "needs-discussion"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! ✨
+        
+        Please provide as much detail as possible to help us understand your request.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: Please confirm the following before submitting your feature request
+      options:
+        - label: I have searched existing issues and discussions
+          required: true
+        - label: I have checked the project roadmap
+          required: true
+        - label: This feature doesn't exist in the current version
+          required: true
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description: A clear and concise description of the feature you'd like to see
+      placeholder: Describe the feature...
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-statement
+    attributes:
+      label: Problem Statement
+      description: What problem does this feature solve? What use case does it address?
+      placeholder: |
+        I'm trying to do X, but I can't because...
+        This feature would help with...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: How would you like this feature to work?
+      placeholder: |
+        I would like to be able to...
+        The API could look like...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feature-category
+    attributes:
+      label: Feature Category
+      description: What category does this feature fall into?
+      options:
+        - WebAssembly Integration
+        - TypeScript Improvements
+        - Performance Optimization
+        - Developer Experience
+        - Documentation
+        - Testing
+        - Build System
+        - API Enhancement
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Low - Nice to have
+        - Medium - Would be helpful
+        - High - Important for my use case
+        - Critical - Blocking my progress
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions
+      description: What alternatives have you considered? How are you currently working around this limitation?
+      placeholder: |
+        I've tried...
+        Current workaround...
+        Other tools that do this...
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples and Use Cases
+      description: Provide specific examples of how this feature would be used
+      placeholder: |
+        Example 1: When building a math-intensive application...
+        Example 2: For performance-critical WebAssembly modules...
+
+  - type: textarea
+    id: implementation-ideas
+    attributes:
+      label: Implementation Ideas
+      description: Do you have any ideas about how this could be implemented?
+      placeholder: |
+        This could be implemented by...
+        Similar to how X library does it...
+        Maybe using Y approach...
+
+  - type: textarea
+    id: api-design
+    attributes:
+      label: API Design (if applicable)
+      description: If this involves new APIs, what would the interface look like?
+      render: typescript
+      placeholder: |
+        // Example API design
+        interface NewFeature {
+          method(param: Type): ReturnType;
+        }
+
+  - type: checkboxes
+    id: breaking-changes
+    attributes:
+      label: Breaking Changes
+      description: Would this feature require breaking changes?
+      options:
+        - label: This feature would require breaking changes
+          required: false
+        - label: This feature could be implemented without breaking changes
+          required: false
+        - label: I'm not sure about breaking changes
+          required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, screenshots, benchmarks, or examples
+      placeholder: |
+        Related projects...
+        Performance expectations...
+        Screenshots or mockups...
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Are you willing to help implement this feature?
+      options:
+        - label: I'm willing to submit a pull request for this feature
+          required: false
+        - label: I can help with testing this feature
+          required: false
+        - label: I can help with documentation for this feature
+          required: false

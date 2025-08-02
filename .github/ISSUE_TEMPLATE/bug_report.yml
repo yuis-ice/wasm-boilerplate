@@ -1,0 +1,149 @@
+name: 🐛 Bug Report
+description: Report a bug or unexpected behavior
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! 🐛
+        
+        Please fill out the following information to help us understand and reproduce the issue.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: Please confirm the following before submitting your bug report
+      options:
+        - label: I have searched existing issues and discussions
+          required: true
+        - label: I have read the README.md and documentation
+          required: true
+        - label: I can reproduce this bug consistently
+          required: true
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: Describe the bug...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to Reproduce
+      description: Detailed steps to reproduce the behavior
+      placeholder: |
+        1. Run `npm start`
+        2. Call function `wasmMath.fibonacci(10)`
+        3. See error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen
+      placeholder: Describe what should have happened...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened
+      placeholder: Describe what actually happened...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment-os
+    attributes:
+      label: Operating System
+      description: What operating system are you using?
+      options:
+        - Windows
+        - macOS
+        - Linux (Ubuntu)
+        - Linux (Other)
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: environment-node
+    attributes:
+      label: Node.js Version
+      description: Output of `node --version`
+      placeholder: "v18.17.0"
+    validations:
+      required: true
+
+  - type: input
+    id: environment-npm
+    attributes:
+      label: npm Version
+      description: Output of `npm --version`
+      placeholder: "9.6.7"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: webassembly-support
+    attributes:
+      label: WebAssembly Support
+      description: Is WebAssembly supported in your environment?
+      options:
+        - "Yes, WebAssembly is working"
+        - "No, using JavaScript fallback"
+        - "Unknown"
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-logs
+    attributes:
+      label: Error Logs
+      description: Please paste any relevant error messages or logs
+      render: shell
+      placeholder: |
+        Error: WebAssembly module failed to load
+            at WasmMath.initialize (/path/to/file.js:123:45)
+            ...
+
+  - type: textarea
+    id: code-sample
+    attributes:
+      label: Code Sample
+      description: If applicable, provide a minimal code sample that reproduces the issue
+      render: typescript
+      placeholder: |
+        import { WasmMath } from './wasmMath';
+        
+        const math = new WasmMath();
+        await math.initialize();
+        // Bug occurs here...
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here (screenshots, performance metrics, etc.)
+      placeholder: Any additional information that might be helpful...
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Are you willing to help fix this issue?
+      options:
+        - label: I'm willing to submit a pull request to fix this bug
+          required: false

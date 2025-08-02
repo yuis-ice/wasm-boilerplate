@@ -1,0 +1,30 @@
+{
+  "name": "wasm-boilerplate",
+  "version": "1.0.0",
+  "description": "A modern boilerplate for Node.js TypeScript WebAssembly applications",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:wasm": "wat2wasm src/math.wat -o dist/math.wasm || echo 'Warning: wat2wasm not found. Please install WABT toolkit.'",
+    "build:full": "npm run build && npm run build:wasm",
+    "start": "node dist/index.js",
+    "dev": "npm run build:full && npm start",
+    "clean": "rm -rf dist/*"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "webassembly",
+    "wasm",
+    "boilerplate",
+    "template",
+    "starter"
+  ],
+  "author": ".fumiya.tsx <jobs.fumiya@pm.me>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {}
+}
